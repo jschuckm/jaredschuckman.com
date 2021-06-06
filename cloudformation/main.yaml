@@ -46,7 +46,7 @@ Resources:
           #     LambdaFunctionARN: !Ref RewriteLambda.Version
             # - EventType: viewer-response
             #   LambdaFunctionARN: !Ref SecureHeadersLambda.Version
-        Aliases: 'jaredschuckman.com,www.jaredschuckman.com'
+        Aliases: ['jaredschuckman.com','www.jaredschuckman.com']
 
   # WebsiteCloudfrontDistribution:
   #   Type: "AWS::CloudFront::Distribution"
