@@ -1,6 +1,10 @@
+import Title from "./Title";
+
 function Body() {
   return (
-      <p>This is body</p>
+        <div>
+            <Title text="Welcome to my portfolio" altText="." divHeight="60vh" fontSize="90px"/>
+        </div>
   );
 }
 
