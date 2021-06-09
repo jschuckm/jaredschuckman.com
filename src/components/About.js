@@ -4,11 +4,12 @@ import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Jared from "../assets/jared.jpg"
 import Resume from "../assets/JaredSchuckmanResume.pdf"
+import "./About.css"
 
 function Body() {
   return (
         <div>
-            <Title text="About me" altText="." divHeight="40vh" fontSize="65px"/>
+            <Title text="About me" altText="." divHeight="25vh" fontSize="65px"/>
             <Container style={{display:"flex",justifyContent:"center",flexDirection: "column", marginTop:"5em"}}>
                 <Row>
                     <Col>
@@ -20,7 +21,7 @@ function Body() {
                         <a href={Resume}>Download Resume</a>
                     </Col>
                     <Col>
-                      <img src={Jared} alt="Picture of Jared"></img>
+                      <img style={{marginBottom: "10px"}} src={Jared} alt="Picture of Jared"></img>
                     </Col>
                 </Row>
             </Container>

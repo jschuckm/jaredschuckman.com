@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row"
 function Projects() {
   return (
         <div>
-            <Title text="Projects" altText="." divHeight="40vh" fontSize="65px"/>
+            <Title text="Projects" altText="." divHeight="25vh" fontSize="65px"/>
             <Container style={{display:"flex",justifyContent:"center",flexDirection: "column", marginTop:"5em",textAlign:"left"}}>
                 <Row>
                     <Col>

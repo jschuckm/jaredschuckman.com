@@ -1,0 +1,7 @@
+@media(max-width:768px){
+    img{
+        width:80vw;
+        height:auto;
+        margin-top: 10px;
+    }
+}
