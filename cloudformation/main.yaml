@@ -47,6 +47,12 @@ Resources:
             # - EventType: viewer-response
             #   LambdaFunctionARN: !Ref SecureHeadersLambda.Version
         Aliases: ['jaredschuckman.com','www.jaredschuckman.com']
+        CustomErrorResponses: 
+          - ErrorCachingMinTTL: 10
+            ErrorCode: 403
+            ResponseCode: 200
+            ResponsePagePath: 'index.html'
+        
 
   # WebsiteCloudfrontDistribution:
   #   Type: "AWS::CloudFront::Distribution"
