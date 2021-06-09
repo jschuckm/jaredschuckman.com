@@ -51,7 +51,7 @@ Resources:
           - ErrorCachingMinTTL: 10
             ErrorCode: 403
             ResponseCode: 200
-            ResponsePagePath: 'index.html'
+            ResponsePagePath: '/index.html'
         
 
   # WebsiteCloudfrontDistribution:
