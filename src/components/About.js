@@ -14,9 +14,8 @@ function Body() {
                 <Row>
                     <Col>
                         <p style={{fontFamily:"Montserrat",fontWeight:"300",letterSpacing:"0.02em",color:"#818181",fontSize:"22px",lineHeight:"30px",textAlign:"left"}}>
-                          I am currently a senior at Iowa State University graduating in spring of 2021 with a major in Computer Engineering. I am planning to attend graduate school after graduating. I am interested in machine learning, natural language processing, blockchain and cybersecurity. I also enjoy cycling, running, and music.<br />
+                          I graduated with a Bachelor of Science in Computer Engineering from Iowa State University in Spring of 2021. I was originally planning to attend graduate school Fall 2021 and Spring 2022 which is why I was interning at John Deere over the summer of 2021. I am now not planning to go back in the fall for graduate school and am seeking a full-time position as a software engineer. I am interested in web development, machine learning, blockchain and cybersecurity. I also enjoy cycling, running, and disc golf.
                           <br />
-                          My career goals after graduating are to obtain a full time position as a software engineer working with blockchain, machine learning, or embedded systems. 
                         </p>
                         <a href={Resume}>Download Resume</a>
                     </Col>
