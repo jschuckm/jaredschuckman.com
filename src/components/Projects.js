@@ -2,6 +2,7 @@ import Title from "./Title";
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
+import gitIcon from "../assets/GitHub-Mark.png"
 
 function Projects() {
   return (
@@ -10,7 +11,8 @@ function Projects() {
             <Container style={{display:"flex",justifyContent:"center",flexDirection: "column", marginTop:"5em",textAlign:"left"}}>
                 <Row>
                     <Col>
-                        <h2 style={{fontFamily:"Montserrat",fontWeight:"700",letterSpacing:"0px",fontSize:"x-large"}}>CowChips4Charity Senior Design Project</h2>
+                        <h2 style={{fontFamily:"Montserrat",fontWeight:"700",letterSpacing:"0px",fontSize:"x-large"}}><a style={{color:"black",}}href="https://github.com/jschuckm?tab=repositories">Github Profile<img style={{width:"30px",height:"30px"}} src={gitIcon}></img></a></h2>
+                        <h2 style={{fontFamily:"Montserrat",fontWeight:"700",letterSpacing:"0px",fontSize:"x-large"}}><a style={{color:"black"}} href="https://github.com/jschuckm/CowChips4Charity">CowChips4Charity Senior Design Project   <img style={{width:"30px",height:"30px"}} src={gitIcon}></img></a></h2>
                         <p style={{fontFamily:"Montserrat",fontWeight:"300",letterSpacing:"0.02em",color:"#818181",fontSize:"22px",lineHeight:"30px",textAlign:"left"}}>
                             The senior design project that I worked on was an online game for the BooRadleyFoundation that was made in order to replace a fundraising event where donors would pick a square they believed a cow would poop on in a field and if the cow pooped on that square the donor would win a prize. Our application has this functionality but virtually. The application allows a user to sign up and donate to a game and then after donating they are able to watch an animation with the cow. 
                             <br /><br />
@@ -20,7 +22,7 @@ function Projects() {
                             <br /><br />
                         </p>
 
-                        <h2 style={{fontFamily:"Montserrat",fontWeight:"700",letterSpacing:"0px",fontSize:"x-large"}}>Travel Insurance Ethereum Smart Contract</h2>
+                        <h2 style={{fontFamily:"Montserrat",fontWeight:"700",letterSpacing:"0px",fontSize:"x-large"}}><a style={{color:"black"}} href="https://github.com/jschuckm/EthereumTravelInsurance">Ethereum Travel Insurance Smart Contract<img style={{width:"30px",height:"30px"}} src={gitIcon}></img></a></h2>
                         <p style={{fontFamily:"Montserrat",fontWeight:"300",letterSpacing:"0.02em",color:"#818181",fontSize:"22px",lineHeight:"30px",textAlign:"left"}}>
                             During my distributed systems class I developed a smart contract on the ethereum test network using solidity. This smart contract was tasked to provide travel insurance. A user would pay for travel insurance and if their flight was cancelled due to weather they would be refunded an amount based on the insurance. Web3 was utilized in order to interact with the smart contract and make calls to the national weather service’s weather API in order to automate the process of determining which flights had been cancelled and which users were to be paid. 
                             <br /><br />
