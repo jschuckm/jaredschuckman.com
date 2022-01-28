@@ -20,7 +20,7 @@ function Body() {
                         <a href={Resume}>Download Resume</a>
                     </Col>
                     <Col>
-                      <img style={{marginBottom: "10px"}} src={Jared} alt="Picture of Jared"></img>
+                      <img style={{marginBottom: "10px"}} src={Jared} alt="Jared Schuckman in professional attire"></img>
                     </Col>
                 </Row>
             </Container>
