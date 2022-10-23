@@ -15,7 +15,7 @@ Resources:
       DistributionConfig:
         Comment: "Cloudfront distribution for serverless website"
         ViewerCertificate:
-          AcmCertificateArn: arn:aws:acm:us-east-1:900854203989:certificate/85f14d97-9e67-433b-9fa5-5d6911941803
+          AcmCertificateArn: arn:aws:acm:us-east-1:900854203989:certificate/0c25bb3f-354b-49d8-a010-779c8e361d09
           MinimumProtocolVersion: TLSv1.1_2016
           SslSupportMethod: sni-only
         DefaultRootObject: "index.html"
