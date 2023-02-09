@@ -2,9 +2,9 @@ trigger:
 - main
 
 stages:
-- stage: Build
+- stage: Deploy
   jobs:
-  - job: BuildJob
+  - job: Deploy
     steps:
     - task: Npm@1
       displayName: 'npm install'
@@ -25,10 +25,6 @@ stages:
         verbose: false
         customCommand: 'run build'
       timeoutInMinutes: 5
-- stage: Deploy
-  jobs:
-  - job: Deploy
-    steps:
     - task: AmazonWebServices.aws-vsts-tools.CloudFormationCreateOrUpdateStack.CloudFormationCreateOrUpdateStack@1
       displayName: 'Create/Update Stack: jaredschuckman'
       inputs:
