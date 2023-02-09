@@ -1,0 +1,48 @@
+trigger: main
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob
+    steps:
+    - task: Npm@1
+      displayName: 'npm install'
+      inputs:
+        verbose: false
+      timeoutInMinutes: 5 
+    - task: Npm@1
+      displayName: 'npm test'
+      inputs:
+        command: custom
+        verbose: false
+        customCommand: 'run testCI'
+      timeoutInMinutes: 5
+    - task: Npm@1
+      displayName: 'npm build'
+      inputs:
+        command: custom
+        verbose: false
+        customCommand: 'run build'
+      timeoutInMinutes: 5
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    steps:
+    - task: AmazonWebServices.aws-vsts-tools.CloudFormationCreateOrUpdateStack.CloudFormationCreateOrUpdateStack@1
+      displayName: 'Create/Update Stack: jaredschuckman'
+      inputs:
+        awsCredentials: 'AWS CLI AzurePipelineAdmin'
+        regionName: 'us-east-1'
+        stackName: jaredschuckman
+        templateFile: cloudformation/main.yaml
+        capabilityAutoExpand: true
+    - task: AmazonWebServices.aws-vsts-tools.AWSCLI.AWSCLI@1
+      displayName: 'AWS CLI: s3'
+      inputs:
+        awsCredentials: 'AWS CLI AzurePipelineAdmin'
+        regionName: 'us-east-1'
+        awsCommand: s3
+        awsSubCommand: sync
+        awsArguments: 'build/ s3://jaredschuckman.com --acl public-read'
+        failOnStandardError: false
+      timeoutInMinutes: 5
