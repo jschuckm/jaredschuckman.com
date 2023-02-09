@@ -10,6 +10,7 @@ stages:
       displayName: 'npm install'
       inputs:
         verbose: false
+        workingDir: 'create-react-app-site'
       timeoutInMinutes: 5 
     - task: Npm@1
       displayName: 'npm test'
@@ -17,6 +18,7 @@ stages:
         command: custom
         verbose: false
         customCommand: 'run testCI'
+        workingDir: 'create-react-app-site'
       timeoutInMinutes: 5
     - task: Npm@1
       displayName: 'npm build'
@@ -24,6 +26,7 @@ stages:
         command: custom
         verbose: false
         customCommand: 'run build'
+        workingDir: 'create-react-app-site'
       timeoutInMinutes: 5
     - task: AmazonWebServices.aws-vsts-tools.CloudFormationCreateOrUpdateStack.CloudFormationCreateOrUpdateStack@1
       displayName: 'Create/Update Stack: jaredschuckman'
@@ -40,6 +43,6 @@ stages:
         regionName: 'us-east-1'
         awsCommand: s3
         awsSubCommand: sync
-        awsArguments: 'build/ s3://jaredschuckman.com --acl public-read'
+        awsArguments: 'create-react-app-site/build/ s3://jaredschuckman.com --acl public-read'
         failOnStandardError: false
       timeoutInMinutes: 5
