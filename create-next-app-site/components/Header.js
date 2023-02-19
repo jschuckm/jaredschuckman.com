@@ -2,6 +2,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import styles from './Header.module.css'
 import {useState} from "react"
+import Link from "next/link"
 
 function Header() {
 
@@ -17,10 +18,10 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
             <Nav>
-                <Nav.Link onClick={()=>{setExpand(false)}} to="/">Home</Nav.Link>
-                <Nav.Link onClick={()=>{setExpand(false)}} to="projects">Projects</Nav.Link>
-                <Nav.Link onClick={()=>{setExpand(false)}} to="about">About</Nav.Link>
-                <Nav.Link onClick={()=>{setExpand(false)}} to="contact">Contact</Nav.Link>
+                <Nav.Link onClick={()=>{setExpand(false)}} as={Link} href="/">Home</Nav.Link>
+                <Nav.Link onClick={()=>{setExpand(false)}} as={Link} href="projects">Projects</Nav.Link>
+                <Nav.Link onClick={()=>{setExpand(false)}} as={Link} href="about">About</Nav.Link>
+                <Nav.Link onClick={()=>{setExpand(false)}} as={Link} href="contact">Contact</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </div>
