@@ -1,0 +1,11 @@
+.brand {
+    width: 25%;
+    text-align: left;
+}
+
+@media (min-width: 992px){
+    .navmenu {
+        width:50%;
+        text-align: center;
+    }
+}
