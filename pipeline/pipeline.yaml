@@ -12,6 +12,7 @@ stages:
         verbose: false
         workingDir: 'create-react-app-site'
       timeoutInMinutes: 5 
+      condition: false
     - task: Npm@1
       displayName: 'npm test'
       inputs:
@@ -20,6 +21,7 @@ stages:
         customCommand: 'run testCI'
         workingDir: 'create-react-app-site'
       timeoutInMinutes: 5
+      condition: false
     - task: Npm@1
       displayName: 'npm build'
       inputs:
@@ -27,6 +29,29 @@ stages:
         verbose: false
         customCommand: 'run build'
         workingDir: 'create-react-app-site'
+      timeoutInMinutes: 5
+      condition: false
+    - task: Npm@1
+      displayName: 'npm install'
+      inputs:
+        verbose: false
+        workingDir: 'create-next-app-site'
+      timeoutInMinutes: 5
+    - task: Npm@1
+      displayName: 'npm build'
+      inputs:
+        command: custom
+        verbose: false
+        customCommand: 'run build'
+        workingDir: 'create-next-app-site'
+      timeoutInMinutes: 5
+    - task: Npm@1
+      displayName: 'npm export'
+      inputs:
+        command: custom
+        verbose: false
+        customCommand: 'run export'
+        workingDir: 'create-next-app-site'
       timeoutInMinutes: 5
     - task: AmazonWebServices.aws-vsts-tools.CloudFormationCreateOrUpdateStack.CloudFormationCreateOrUpdateStack@1
       displayName: 'Create/Update Stack: jaredschuckman'
@@ -44,5 +69,16 @@ stages:
         awsCommand: s3
         awsSubCommand: sync
         awsArguments: 'create-react-app-site/build/ s3://jaredschuckman.com --acl public-read'
+        failOnStandardError: false
+      timeoutInMinutes: 5
+      condition: false
+    - task: AmazonWebServices.aws-vsts-tools.AWSCLI.AWSCLI@1
+      displayName: 'AWS CLI: s3'
+      inputs:
+        awsCredentials: 'AWS CLI AzurePipelineAdmin'
+        regionName: 'us-east-1'
+        awsCommand: s3
+        awsSubCommand: sync
+        awsArguments: 'create-next-app-site/out/ s3://jaredschuckman.com --acl public-read'
         failOnStandardError: false
       timeoutInMinutes: 5
