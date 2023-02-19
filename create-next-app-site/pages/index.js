@@ -3,7 +3,7 @@ import Body from "../components/Body";
 
 export default function Home() {
   return (
-    <div>
+    <div class="App">
       <Header></Header>
       <Body></Body>
     </div>

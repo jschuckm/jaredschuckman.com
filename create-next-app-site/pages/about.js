@@ -7,7 +7,7 @@ import styles from "./About.module.css"
 
 export default function About() {
   return (
-        <div>
+        <div class="App">
           <Header></Header>
             <Title text="About me" altText="." divHeight="25vh" fontSize="65px"/>
             <Container style={{display:"flex",justifyContent:"center",flexDirection: "column", marginTop:"5em"}}>
