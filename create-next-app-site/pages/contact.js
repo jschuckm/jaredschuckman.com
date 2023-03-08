@@ -2,10 +2,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Script from "next/script";
+import HeadSEO from "../components/HeadSEO";
 
 function Contact() {
   return (
         <div class="App">
+            <HeadSEO />
             <Header></Header>
             <Title text="Contact me" altText="." divHeight="25vh" fontSize="65px" />
             <Container style={{height:"65vh",display:"flex",justifyContent:"space-evenly",flexDirection: "column"}}>

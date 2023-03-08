@@ -4,10 +4,12 @@ import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Header from "../components/Header"
 import styles from "./About.module.css"
+import HeadSEO from "../components/HeadSEO";
 
 export default function About() {
   return (
         <div class="App">
+          <HeadSEO />
           <Header></Header>
             <Title text="About me" altText="." divHeight="25vh" fontSize="65px"/>
             <Container style={{display:"flex",justifyContent:"center",flexDirection: "column", marginTop:"5em"}}>

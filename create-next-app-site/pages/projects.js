@@ -3,10 +3,12 @@ import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Header from "../components/Header";
+import HeadSEO from "../components/HeadSEO";
 
 function Projects() {
   return (
         <div class="App">
+            <HeadSEO />
             <Header></Header>
             <Title text="Projects" altText="." divHeight="25vh" fontSize="65px"/>
             <Container style={{display:"flex",justifyContent:"center",flexDirection: "column", marginTop:"5em",textAlign:"left"}}>
